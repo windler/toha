@@ -44,10 +44,21 @@
       {{ end }}
     </div>
     <!-- soft skills circular-progressbar -->
+    {{ if .softSkills }}
     <div class="col-sm-6 pt-5 pl-md-4 pl-sm-3 pt-sm-0">
       <div class="row">
         {{ range .softSkills }}
           {{ partial "misc/soft-skills.html" . }}
+        {{ end }}
+      </div>
+    </div>
+    {{ end }}
+    <div class="col-sm-6 pt-5 pl-md-4 pl-sm-3 pt-sm-0 d-flex align-items-center">
+      <div class="row">
+        {{ range .education }}
+        <p>
+          <i class="fas fa-graduation-cap"></i> {{ .title }} ({{ .year }}, {{ .school }})
+        </p>
         {{ end }}
       </div>
     </div>
